@@ -7,7 +7,7 @@ each time the program starts it loads the excel file with the previous exported 
 Can be easily changed to suit other coins with different block values
 Created with the help of Chat GPT
 
-To run this file in Python the following pythin packages installed:
+To run this file in Python the following python packages installed:
 - tkinter = python -m tkinter
 - pandas = pip install pandas
 - xlsxwriter = pip install XlsxWriter
