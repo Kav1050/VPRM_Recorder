@@ -97,7 +97,7 @@ def load_from_excel():
 def create_ui():
     window = tk.Tk()
     window.title("Vaporum Coin Recorder")
-    window.geometry("800x600")
+    window.geometry("850x625")
     window.configure(bg="black")
 
     instructions = tk.Label(window, text="INPUT EACH DAY'S TOTAL WALLET OR NODE VALUE TO SEE YOUR DAILY MINING REVENUE.", font=("Arial", 12), fg="white", bg="black")
