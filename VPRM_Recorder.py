@@ -32,8 +32,8 @@ def save_value(area):
         area["values_text"].insert(tk.END, f"{datetime.datetime.now().strftime('%d-%m-%Y %H:%M:%S')}: {value}\n")
 
         area["difference_text"]["text"] = f"Difference from previous day: {difference}"
-        area["cumulative_diff_text"]["text"] = f"Total cumulative difference: {sum(area['differences'])}"
-        area["divided_diff_text"]["text"] = f"Divided difference by 50: {difference / 50}"
+        area["cumulative_diff_text"]["text"] = f"Total coins mined from start: {sum(area['differences'])}"
+        area["divided_diff_text"]["text"] = f"Blocks mined = Total/50: {difference / 50}"
 
         area["value_entry"].delete(0, tk.END)
     else:
@@ -45,8 +45,8 @@ def clear_values(area):
     area["dates"] = []
     area["values_text"].delete(1.0, tk.END)
     area["difference_text"]["text"] = "Difference from previous day: 0"
-    area["cumulative_diff_text"]["text"] = "Total cumulative difference: 0"
-    area["divided_diff_text"]["text"] = "Divided difference by 50: 0"
+    area["cumulative_diff_text"]["text"] = "Total coins mined from start: 0"
+    area["divided_diff_text"]["text"] = "Blocks mined = Total/50: 0"
 
 def export_to_excel():
     filename = "all_areas_values.xlsx"
@@ -103,7 +103,7 @@ def create_ui():
     instructions = tk.Label(window, text="INPUT EACH DAY'S TOTAL WALLET OR NODE VALUE TO SEE YOUR DAILY MINING REVENUE.", font=("Arial", 12), fg="white", bg="black")
     instructions.place(x=10, y=10)
 
-    instruction2 = tk.Label(window, text="Press export to excel on first use.", font=("Arial", 12), fg="white", bg="black")
+    instruction2 = tk.Label(window, text="Press export to excel on first use.Export to excel before closing.", font=("Arial", 12), fg="white", bg="black")
     instruction2.place(x=10, y=30)
 
     for area in areas:
@@ -137,10 +137,10 @@ def create_ui():
         area["difference_text"] = tk.Label(area["frame"], text="Difference from previous day: 0", fg="white", bg="black")
         area["difference_text"].pack()
 
-        area["cumulative_diff_text"] = tk.Label(area["frame"], text="Total coins from start: 0", fg="white", bg="black")
+        area["cumulative_diff_text"] = tk.Label(area["frame"], text="Total coins mined from start: 0", fg="white", bg="black")
         area["cumulative_diff_text"].pack()
 
-        area["divided_diff_text"] = tk.Label(area["frame"], text="Blocks Mined Total/50: 0", fg="white", bg="black")
+        area["divided_diff_text"] = tk.Label(area["frame"], text="Blocks mined = Total/50: 0", fg="white", bg="black")
         area["divided_diff_text"].pack()
 
         area["clear_button"] = tk.Button(area["frame"], text="Clear Values", command=lambda a=area: clear_values(a), bg="light green")
