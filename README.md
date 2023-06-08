@@ -13,6 +13,5 @@ To run this file in Python the following python packages installed:
 - xlsxwriter = pip install XlsxWriter
 
 To compile into a windows exe file you need Pyinstaller installed = pip install pyinstaller
-then in a CMD prompt window, navigate to the folder where the VPRM_Recorder file is and and run = pyinstaller --onefile --noconsole your_script.py
-
+then in a CMD prompt window, navigate to the folder where the VPRM_Recorder file is and and run = pyinstaller --onefile --noconsole VPRM_Recorder.py
 
